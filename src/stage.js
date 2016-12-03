@@ -4,9 +4,18 @@ import classnames from 'classnames';
 import css from './stage.less'
 
 import Typewriter from './components/typewriter/typewriter.js';
+import Photos from './components/photos/photos.js';
 
 const {Component} = React;
 const cx = classnames.bind(css);
+
+const tmpData = [
+  './assets/images/1.jpg',
+  './assets/images/2.jpg',
+  './assets/images/3.jpg',
+  './assets/images/4.jpg',
+  './assets/images/5.jpg',
+];
 
 class Stage extends Component {
   constructor(props) {
@@ -18,6 +27,7 @@ class Stage extends Component {
   render() {
     return (
       <section className="stage-wrap">
+        <Photos urls={tmpData} />
       </section>
     );
   }
