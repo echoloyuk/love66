@@ -27,7 +27,7 @@ class Stage extends Component {
   render() {
     return (
       <section className="stage-wrap">
-        <Photos urls={tmpData} />
+        <Photos urls={tmpData} start={true} />
       </section>
     );
   }

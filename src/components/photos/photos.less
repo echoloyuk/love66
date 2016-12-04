@@ -27,10 +27,10 @@
       animation-fill-mode: forwards;
     }
     &.top-in, &.left-in, &.right-in, &.bottom-in {
-      z-index: 2;
+      
     }
     &.top-out, &.left-out, &.right-out, &.bottom-out {
-      z-index: 1;
+      
     }
     &.top-in {
       animation-name: top-in;
@@ -62,68 +62,84 @@
 @keyframes top-in {
   0% {
     top: -100%;
+    left: 0;
   }
   100% {
     top: 0;
+    left: 0;
   }
 }
 @keyframes top-out {
   0% {
     top: 0;
+    left: 0;
   }
   100% {
     top: -100%;
+    left: 0;
   }
 }
 
 @keyframes bottom-in {
   0% {
     top: 100%;
+    left: 0;
   }
   100% {
     top: 0;
+    left: 0;
   }
 }
 @keyframes bottom-out {
   0% {
     top: 0;
+    left: 0;
   }
   100% {
     top: 100%;
+    left: 0;
   }
 }
 
 @keyframes left-in {
   0% {
     left: -100%;
+    top: 0;
   }
   100% {
     left: 0;
+    top: 0;
   }
 }
 @keyframes left-out {
   0% {
     left: 0;
+    top: 0;
   }
   100% {
     left: -100%;
+    top: 0;
   }
 }
 
 @keyframes right-in {
   0% {
     left: 100%;
+    top: 0;
   }
   100% {
     left: 0;
+    top: 0;
   }
 }
 @keyframes right-out {
   0% {
     left: 0;
+    top: 0;
   }
   100% {
     left: 100%;
+    top: 0;
   }
 }
 
