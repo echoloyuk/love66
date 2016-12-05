@@ -5,6 +5,7 @@ import css from './stage.less'
 
 import Typewriter from './components/typewriter/typewriter.js';
 import Photos from './components/photos/photos.js';
+import Book from './components/book/book.js';
 
 const {Component} = React;
 const cx = classnames.bind(css);
@@ -27,7 +28,9 @@ class Stage extends Component {
   render() {
     return (
       <section className="stage-wrap">
-        <Photos urls={tmpData} start={true} />
+        <Book>
+          
+        </Book>
       </section>
     );
   }
