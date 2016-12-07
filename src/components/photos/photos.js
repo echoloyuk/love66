@@ -17,6 +17,7 @@ class Photos extends Component {
     };
 
     this.timmer = null;
+    this.flag = 0; // 记录是否都被遍历了。
   }
 
   componentDidMount() {
@@ -25,13 +26,13 @@ class Photos extends Component {
 
   componentWillReceiveProps(next) {
     if (!this.props.start && next.start) {
-
+      this.flag = 0;
     }
   }
 
   doAni() {
     let {inIndex, outIndex} = this.state;
-    let urls = this.props.urls;
+    let {urls, onFinish} = this.props;
 
     const count = urls.length;
 
@@ -46,6 +47,16 @@ class Photos extends Component {
       inIndex, outIndex,
       dir: this.getDir()
     });
+
+    if (this.flag < outIndex) {
+      this.flag = outIndex;
+    }
+    if (this.flag === count - 1) {
+      this.flag = count;
+      if (typeof onFinish === 'function') {
+        onFinish.call();
+      }
+    }
     console.log('frame action');
   }
 
@@ -60,13 +71,13 @@ class Photos extends Component {
   }
 
   render() {
-    const {start, urls} = this.props;
+    const {start, urls, interval} = this.props;
     const {inIndex, outIndex, dir} = this.state;
     let self = this;
 
     if (start) {
       clearTimeout(this.timmer);
-      this.timmer = setTimeout(this.doAni.bind(this), IMG_INTERVAL);
+      this.timmer = setTimeout(this.doAni.bind(this), interval || IMG_INTERVAL);
     }
 
   	return (
