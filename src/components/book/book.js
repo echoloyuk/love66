@@ -26,6 +26,7 @@ class Book extends Component {
 
     return (
       <div className="book">
+        <div className="spine"></div>
         {
           childs.map((item, index) => {
             let cls = classNames('page', {
