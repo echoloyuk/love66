@@ -1,19 +1,77 @@
+
+@border: #333;
+@border-shadow: #666;
 .book {
   background-color: #fff;
   width: 100%;
   height: 100%;
   position: relative;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+
+  .left-surface, .right-surface, .surface {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    box-sizing: border-box;
+    transition: all 1.2s ease-out;
+    backface-visibility: hidden;
+    border: 6px solid @border;
+    z-index: 1;
+  }
+  .surface {
+    right: 0;
+    background-color: #fff;
+    z-index: 10;
+    transform-origin: 0 0;
+  }
+  .left-surface {
+    left: 0;
+    transform-origin: 100% 0;
+    border-radius: 0 10px 0 0;
+    transform: rotateY(180deg);
+    box-shadow: 
+      -2px 2px 0 @border-shadow,
+      -4px 4px 0 @border-shadow,
+      -6px 6px 0 @border-shadow,
+      -8px 8px 0 @border-shadow,
+      -10px 10px 0 @border-shadow;
+  }
+  .right-surface {
+    right: 0;
+    border-radius: 10px 0 0 0;
+    box-shadow: 
+      2px 2px 0 @border-shadow,
+      4px 4px 0 @border-shadow,
+      6px 6px 0 @border-shadow,
+      8px 8px 0 @border-shadow,
+      10px 10px 0 @border-shadow;
+  }
+  &.open {
+    .surface {
+      transform: rotateY(-180deg);
+    }
+    .left-surface {
+      transform: rotateY(0deg);
+    }
+    .spine {
+      opacity: 1;
+    }
+  }
 
   .spine {
     position: absolute;
-    width: 30px;
-    height: 6px;
-    background-color: #333;
+    width: 40px;
+    height: 20px;
+    background-color: @border-shadow;
     left: 50%;
-    bottom: -6px;
-    margin-left: -15px;
+    bottom: -20px;
+    margin-left: -20px;
     z-index: 10;
     border-radius: 0 0 3px 3px;
+    opacity: 0;
+    transition: all .5s .5s;
   }
 
   .page {
@@ -22,7 +80,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    perspective: 2000px;
+    perspective: 2600px;
     transform-style: preserve-3d;
 
     &.open {
@@ -47,7 +105,7 @@
       width: 50%;
       height: 100%;
       top: 0;
-      border: 6px solid #333;
+      border: 6px solid @border;
       background-color: #fff;
       box-sizing: border-box;
       backface-visibility: hidden;
@@ -64,6 +122,7 @@
       right: 0;
       transform-origin: 0 0;
       border-radius: 10px 0 0 0;
+      background-color: #ccc;
     }
   }
 }

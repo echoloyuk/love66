@@ -16,18 +16,19 @@ class Stage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      open: false,
       page: 0,
-      p1: true,
+      p1: false,
       p2: false,
       p3: false,
       p4: false
     }
   }
   render() {
-    const {page, p1, p2, p3, p4} = this.state;
+    const {open, page, p1, p2, p3, p4} = this.state;
     return (
       <section className="stage-wrap">
-        <Book page={page}>{[
+        <Book open={open} page={page}>{[
           {
             left: <div>l-1</div>,
             right: <Photos urls={['./assets/images/1.jpg', './assets/images/2.jpg']} start={p1} onFinish={this.onPage(0)} />
@@ -42,8 +43,15 @@ class Stage extends Component {
             right: <Photos urls={['./assets/images/3.jpg', './assets/images/4.jpg']} start={p4} />
           },
         ]}</Book>
+        <div style={{position:'absolute',zIndex:'100',left:0,top:0,background:'#ff0'}} onClick={this.open.bind(this)}>ok</div>
       </section>
     );
+  }
+  open() {
+    this.setState({
+      open: true,
+      p1: true
+    });
   }
   onPage(p) {
     return () => {
@@ -52,7 +60,6 @@ class Stage extends Component {
         page: p + 1
       }
       tmp['p' + (p + 2)] = true;
-      console.log(tmp);
       this.setState(tmp);
     }
   }

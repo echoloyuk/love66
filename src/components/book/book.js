@@ -11,7 +11,7 @@ class Book extends Component {
 
   render() {
     let childs = this.props.children;
-    let {page} = this.props;
+    let {page, open} = this.props;
     if (!Array.isArray(childs)) {
       childs = [childs];
     }
@@ -24,17 +24,29 @@ class Book extends Component {
     curPage = page;
     prevPage = page ? page - 1 : null;
 
+    let cls = classNames('book', {
+      open: open
+    });
     return (
-      <div className="book">
+      <div className={cls}>
+        <div className="surface">Hello</div>
+        <div className="left-surface"></div>
+        <div className="right-surface"></div>
         <div className="spine"></div>
+        <div></div>
         {
           childs.map((item, index) => {
-            let cls = classNames('page', {
-              open: (index === curPage),
-              close: (index < curPage) 
-            });
+            let cls;
+            if (open) {
+              cls = classNames('page', {
+                open: (index === curPage),
+                close: (index < curPage) 
+              });
+            } else {
+              cls = classNames('page');
+            }
             return (
-              <div className={cls} style={{zIndex: (index === curPage ? 2 : 1)}} key={index}>
+              <div className={cls} style={{zIndex: (index === curPage ? 3 : 2)}} key={index}>
                 <div className="left">{item.left}</div>
                 <div className="right">{item.right}</div>
               </div>
@@ -43,15 +55,6 @@ class Book extends Component {
         }
       </div>
     );
-
-    // return (
-    //   <div className="book">
-    //     <div className="page" style={{zIndex:3}}>
-    //       <div className="left">Left1</div>
-    //       <div className="right">Right1</div>
-    //     </div>
-    //   </div>
-    // )
   }
 }
 
