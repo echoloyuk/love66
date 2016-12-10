@@ -1,68 +1,59 @@
 import React from 'react';
 import classnames from 'classnames';
-
+import {connect} from 'react-redux';
 import css from './stage.less'
-
-import Typewriter from './components/typewriter/typewriter.js';
-import Photos from './components/photos/photos.js';
 import Book from './components/book/book.js';
+import Typewriter from './components/typewriter/typewriter.js';
+
+import action from './action/action.js';
+import DEFAULT from './default-state.js';
 
 const {Component} = React;
 const cx = classnames.bind(css);
 
-let _p = 0;
-
 class Stage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      open: false,
-      page: 0,
-      p1: false,
-      p2: false,
-      p3: false,
-      p4: false
-    }
   }
   render() {
-    const {open, page, p1, p2, p3, p4} = this.state;
+    const {
+      name, 
+      subName, 
+      bookOpen, 
+      page,
+      code,
+
+      doOpenBook,
+      doNextPage
+    } = this.props;
     return (
       <section className="stage-wrap">
-        <Book open={open} page={page}>{[
+        <Book name={name} subName={subName} open={bookOpen} page={page}>{[
           {
-            left: <div>l-1</div>,
-            right: <Photos urls={['./assets/images/1.jpg', './assets/images/2.jpg']} start={p1} onFinish={this.onPage(0)} />
+            left: <Typewriter start={code[0].start}>{code[0].context}</Typewriter>,
+            right: <div>r-1</div>
           }, {
             left: <div>l-2</div>,
-            right: <Photos urls={['./assets/images/3.jpg', './assets/images/4.jpg']} start={p2} onFinish={this.onPage(1)} />
-          }, {
-            left: <div>l-3</div>,
-            right: <Photos urls={['./assets/images/5.jpg', './assets/images/1.jpg']} start={p3} onFinish={this.onPage(2)} />
-          }, {
-            left: <div>l-4</div>,
-            right: <Photos urls={['./assets/images/3.jpg', './assets/images/4.jpg']} start={p4} />
-          },
+            right: <div>r-2</div>
+          }
         ]}</Book>
-        <div style={{position:'absolute',zIndex:'100',left:0,top:0,background:'#ff0'}} onClick={this.open.bind(this)}>ok</div>
+        <div style={{position:'absolute',zIndex:'100',left:-100,top:-100,background:'#ff0'}}>
+          <div onClick={doOpenBook}>open</div>
+          <div onClick={doNextPage}>next</div>
+        </div>
       </section>
     );
   }
-  open() {
-    this.setState({
-      open: true,
-      p1: true
-    });
-  }
-  onPage(p) {
-    return () => {
-      console.log(p);
-      let tmp = {
-        page: p + 1
-      }
-      tmp['p' + (p + 2)] = true;
-      this.setState(tmp);
-    }
+}
+
+const props = (state) => {
+  return Object.assign({}, state);
+}
+const dispatch = (dispatch, o) => {
+  return {
+    doOpenBook: (...args) => dispatch(action.openBook(...args)),
+    doNextPage: (...args) => dispatch(action.nextPage(...args))
   }
 }
 
-export default Stage;
+export default connect(props, dispatch)(Stage);
