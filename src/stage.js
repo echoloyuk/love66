@@ -4,8 +4,10 @@ import {connect} from 'react-redux';
 import css from './stage.less'
 import Book from './components/book/book.js';
 import Typewriter from './components/typewriter/typewriter.js';
+import Photos from './components/photos/photos.js';
+import Timmer from './components/timmer/timmer.js';
 
-import action from './action/action.js';
+import dispatch from './action/action.js';
 import DEFAULT from './default-state.js';
 
 const {Component} = React;
@@ -21,24 +23,29 @@ class Stage extends Component {
       subName, 
       bookOpen, 
       page,
-      code,
+      pageContext,
+      wait,
+      timmerOn,
+      timeSeed,
 
       doOpenBook,
       doNextPage
     } = this.props;
     return (
       <section className="stage-wrap">
-        <Book name={name} subName={subName} open={bookOpen} page={page}>{[
-          {
-            left: <Typewriter start={code[0].start}>{code[0].context}</Typewriter>,
-            right: <div>r-1</div>
-          }, {
-            left: <div>l-2</div>,
-            right: <div>r-2</div>
-          }
-        ]}</Book>
+        <Timmer on={timmerOn} time={wait} timeSeed={timeSeed} onTime={doNextPage} />
+        <Book name={name} subName={subName} open={bookOpen} page={page}>
+        {
+          pageContext.map((item, i) => {
+            return {
+              left: <Typewriter start={item.code.start}>{item.code.context}</Typewriter>,
+              right: <Photos start={item.imgs.start} urls={item.imgs.urls} />
+            }
+          })
+        }
+        </Book>
         <div style={{position:'absolute',zIndex:'100',left:-100,top:-100,background:'#ff0'}}>
-          <div onClick={doOpenBook}>open</div>
+          <div onClick={doOpenBook}>open{wait}</div>
           <div onClick={doNextPage}>next</div>
         </div>
       </section>
@@ -49,11 +56,6 @@ class Stage extends Component {
 const props = (state) => {
   return Object.assign({}, state);
 }
-const dispatch = (dispatch, o) => {
-  return {
-    doOpenBook: (...args) => dispatch(action.openBook(...args)),
-    doNextPage: (...args) => dispatch(action.nextPage(...args))
-  }
-}
+
 
 export default connect(props, dispatch)(Stage);
