@@ -14,10 +14,25 @@ export default {
         start: false,
         context: 
 `
-var a = 5;
-var love = function (a) {
-  a.love(b);
-};
+// 渐渐的发现，我喜欢上了你
+i.found(i.like(you));
+// 于是，我决定：追你!
+i.decide(Chase(you));
+i.action.push(function () {
+  // 于是我开始减肥
+  i.weight -= 50;
+  // 尝试了解你
+  i.load(you.getInfo('生日','爱好', ...args));
+  // 加入你No.1的社团
+  i.join(you.getParty(1), function (){
+    // 为你而加入我这辈子可能都不会加入的舞蹈团
+    i.try(Dance());
+    // 只为多看你几眼
+    i.see(you);
+    // 只为下班多和你走一程
+    i.route = you.getWayToHome();
+  });
+});
 `
       }, 
       imgs: {
@@ -27,7 +42,7 @@ var love = function (a) {
           './assets/images/2.jpg'
         ]
       },
-      wait: 9000
+      wait: 50
     }, {
       code: {
         start: false,
@@ -40,7 +55,7 @@ var love = function (a) {
           './assets/images/4.jpg'
         ]
       },
-      wait: 4000
+      wait: 4
     }, {
       code: {
         start: false,
@@ -53,7 +68,7 @@ var love = function (a) {
           './assets/images/2.jpg'
         ]
       },
-      wait: 1000
+      wait: 1
     }
   ]
 }

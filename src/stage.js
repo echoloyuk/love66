@@ -33,7 +33,7 @@ class Stage extends Component {
     } = this.props;
     return (
       <section className="stage-wrap">
-        <Timmer on={timmerOn} time={wait} timeSeed={timeSeed} onTime={doNextPage} />
+        <Timmer on={timmerOn} time={wait * 1000} timeSeed={timeSeed} onTime={doNextPage} />
         <Book name={name} subName={subName} open={bookOpen} page={page}>
         {
           pageContext.map((item, i) => {
