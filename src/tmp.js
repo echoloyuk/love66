@@ -9,7 +9,6 @@ var you = new Girl('刘柳');
 you.team = i.team;
 // 重要的是：
 i.remember(you);
-
 // 从那时起，日复一日
 while (i++ < 10000000000000) {
   // 我发现我不能忘记你
@@ -41,4 +40,27 @@ i.action.push(function () {
     // 只为下班多和你走一程
     i.route = you.getWayToHome();
   });
+});
+
+// ------
+// 功夫不负有心人, 你在那一天开始同意与我接触
+var date1 = new Date('2014-08-02');
+// 那一天起，开始有了属于我们的故事
+var we = new Stroy(you, i);
+we.try(function {
+  // 我们第一次看电影
+  we.watchMovie().at('2014-08-03');
+  // 我们第一次约会
+  we.goto('首都师范大学', function () {
+    // 第一次牵你的手
+    i.hand(you.getHand());
+  }).at('2014-08-14');
+  // 第一次和你呆满一整个白天。
+  we.goto('颐和园').at('2014-08-24');
+}).catch(function (e) {
+  // 虽然你一直在犹豫。
+  you.hesitate(i);
+}).finally(function () {
+  // 但我从未改变过。
+  i.ensure(you);
 });
