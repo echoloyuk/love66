@@ -14,27 +14,20 @@ export default {
         start: false,
         context: 
 `
-// 功夫不负有心人, 你在那一天开始同意与我接触
-var date1 = new Date('2014-08-02');
-// 那一天起，开始有了属于我们的故事
-var we = new Stroy(you, i);
-we.try(function {
-  // 我们第一次看电影
-  we.watchMovie().at('2014-08-03');
-  // 我们第一次约会
-  we.goto('首都师范大学', function () {
-    // 第一次牵你的手
-    i.hand(you.getHand());
-  }).at('2014-08-14');
-  // 第一次和你呆满一整个白天。
-  we.goto('颐和园').at('2014-08-24');
-}).catch(function (e) {
-  // 虽然你一直在犹豫。
-  you.hesitate(i);
-}).finally(function () {
-  // 但我从未改变过。
-  i.ensure(you);
+// 新的故事发生在那年情人节
+var date = new Date('2015-02-14');
+we.watchMovie('饥饿游戏');
+// 还记得这家西餐厅吗？
+i.invite(you).to('FLO福楼餐厅', function () {
+  // 那天我们留下了第一张正式的合影
+  you.accept(i);
 });
+// 我会永远记住这一天。
+const START = new Date('2015-04-10');
+// 那天你同意了我的追求。
+i.setGirlFriend(you);
+// 我成为了天下最幸福的男人！
+i.happiness += 10000000;
 `
       }, 
       imgs: {
