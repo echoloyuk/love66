@@ -14,20 +14,21 @@ export default {
         start: false,
         context: 
 `
-// 新的故事发生在那年情人节
-var date = new Date('2015-02-14');
-we.watchMovie('饥饿游戏');
-// 还记得这家西餐厅吗？
-i.invite(you).to('FLO福楼餐厅', function () {
-  // 那天我们留下了第一张正式的合影
-  you.accept(i);
+// 我们的故事留在了国外
+we.at('2016-06-02').go('日本', function (go) {
+  // 我们去日本吃海鲜
+  go.push('心斋桥');
+  // 环球影城的狂欢
+  go.push('环球影城');
+  // 一起去看小鹿
+  go.push('奈良');
+  // 一起走过京都稻荷大社
+  go.push('京都');
+  // 一起去看灌篮高手的那个路口
+  go.push('镰仓');
+  // 感谢你陪我去了两次秋叶原 :-D
+  go.push('东京').add('皇居', '秋叶原');
 });
-// 我会永远记住这一天。
-const START = new Date('2015-04-10');
-// 那天你同意了我的追求。
-i.setGirlFriend(you);
-// 我成为了天下最幸福的男人！
-i.happiness += 10000000;
 `
       }, 
       imgs: {
