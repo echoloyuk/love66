@@ -80,7 +80,7 @@ class Typewriter extends Component {
 
     if (start) {
       clearTimeout(this.timmer);
-      this.timmer = setTimeout(this.doAni.bind(this), 80);
+      this.timmer = setTimeout(this.doAni.bind(this), 72);
     }
 
     const comReg = /^([\s]{0,}\/\/)/;
