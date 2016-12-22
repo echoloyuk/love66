@@ -4,6 +4,7 @@ const action = {
   nextPage: () => ({type: 'NEXTPAGE'}),
   codeStart: () => ({type: 'CODESTART'}),
   imgStart: () => ({type: 'IMGSTART'}),
+  imgStop: () => ({type: 'IMGSTOP'}),
   setTimmer: () => ({type: 'SETTIMMER'})
 }
 
@@ -18,6 +19,7 @@ export default (dispatch, o) => {
       }, 1200);
     },
     doNextPage: (...args) => {
+      dispatch(action.imgStop(...args)); //为了提高效率
       dispatch(action.nextPage(...args));
       setTimeout(() => {
         dispatch(action.codeStart(...args));

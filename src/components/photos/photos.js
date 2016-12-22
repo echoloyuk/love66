@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import css from './photos.less';
 
-const IMG_INTERVAL = 3000;
+const IMG_INTERVAL = 4000;
 const DIRECTION = ['top', 'right', 'bottom', 'left'];
 
 class Photos extends Component {
@@ -18,10 +18,6 @@ class Photos extends Component {
 
     this.timmer = null;
     this.flag = 0; // 记录是否都被遍历了。
-  }
-
-  componentDidMount() {
-
   }
 
   componentWillReceiveProps(next) {
@@ -60,6 +56,10 @@ class Photos extends Component {
     console.log('frame action');
   }
 
+  isMov(url) {
+    return /.mp4$/.test(url);
+  }
+
   getDir() {
     let count = DIRECTION.length;
     let i = Math.floor(Math.random() * count);
@@ -72,12 +72,20 @@ class Photos extends Component {
 
   render() {
     const {start, urls, interval} = this.props;
-    const {inIndex, outIndex, dir} = this.state;
+    let {inIndex, outIndex, dir} = this.state;
     let self = this;
-
+    console.log(start);
     if (start) {
-      clearTimeout(this.timmer);
-      this.timmer = setTimeout(this.doAni.bind(this), interval || IMG_INTERVAL);
+      if (urls.length > 1) {
+        clearTimeout(this.timmer);
+        this.timmer = setTimeout(this.doAni.bind(this), interval || IMG_INTERVAL);
+      } else {
+        outIndex = 1;
+        inIndex = 0;
+        dir = this.getDir();
+      }
+    } else {
+      return null;
     }
 
   	return (
@@ -95,12 +103,19 @@ class Photos extends Component {
               zIndex = 2;
             }
             cls = classNames(cls);
-
-            return (<div 
-              key={index} 
-              className={cls} 
-              style={{backgroundImage: 'url("' + item + '")', zIndex: zIndex}}
-              ></div>);
+            if (this.isMov(item)) {
+              return (
+                <div key={index} className={cls}>
+                  <video src={item} autoPlay loop />
+                </div>
+              );
+            } else {
+              return (<div 
+                key={index} 
+                className={cls} 
+                style={{backgroundImage: 'url("' + item + '")', zIndex: zIndex}}
+                ></div>);
+            }
           })
         }
   		</div>

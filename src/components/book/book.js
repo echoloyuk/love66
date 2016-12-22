@@ -43,13 +43,14 @@ class Book extends Component {
             if (open) {
               cls = classNames('page', {
                 open: (index === curPage),
-                close: (index < curPage) 
+                close: (index < curPage),
+                hide: (index < curPage - 1 || index > curPage + 1) 
               });
             } else {
               cls = classNames('page');
             }
             return (
-              <div className={cls} style={{zIndex: (index === curPage ? 3 : 2)}} key={index}>
+              <div className={cls} style={{zIndex: (index <= curPage ? 3 : 2)}} key={index}>
                 <div className="left">{item.left}</div>
                 <div className="right">{item.right}</div>
               </div>

@@ -35,6 +35,10 @@ export default (state = DEFAULT_STATE, action) => {
       pageContext[page].imgs.start = true;
       state.pageContext = pageContext;
       break;
+    case 'IMGSTOP':
+      resetImgStat(pageContext);
+      state.pageContext = pageContext;
+      break;
     case 'SETTIMMER':
       if (state.bookOpen && page < length - 1) {
         state.timmerOn = true;

@@ -38,8 +38,8 @@ while (i++ < 10000000000000) {
       imgs: {
         start: false,
         urls: [
-          './assets/images/1.jpg', 
-          './assets/images/2.jpg'
+          './assets/mov/1.mp4',
+          './assets/images/4.jpg'
         ]
       },
       wait: 35
