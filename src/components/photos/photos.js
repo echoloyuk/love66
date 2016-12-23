@@ -74,7 +74,6 @@ class Photos extends Component {
     const {start, urls, interval} = this.props;
     let {inIndex, outIndex, dir} = this.state;
     let self = this;
-    console.log(start);
     if (start) {
       if (urls.length > 1) {
         clearTimeout(this.timmer);

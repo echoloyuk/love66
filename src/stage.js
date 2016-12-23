@@ -8,7 +8,6 @@ import Photos from './components/photos/photos.js';
 import Timmer from './components/timmer/timmer.js';
 
 import dispatch from './action/action.js';
-import DEFAULT from './default-state.js';
 
 const {Component} = React;
 const cx = classnames.bind(css);
@@ -21,6 +20,7 @@ class Stage extends Component {
     const {
       name, 
       subName, 
+      others,
       bookOpen, 
       page,
       pageContext,
@@ -34,7 +34,7 @@ class Stage extends Component {
     return (
       <section className="stage-wrap">
         <Timmer on={timmerOn} time={wait * 1000} timeSeed={timeSeed} onTime={doNextPage} />
-        <Book name={name} subName={subName} open={bookOpen} page={page}>
+        <Book name={name} subName={subName} open={bookOpen} page={page} others={others}>
         {
           pageContext.map((item, i) => {
             return {
@@ -44,7 +44,7 @@ class Stage extends Component {
           })
         }
         </Book>
-        <div style={{position:'absolute',zIndex:'100',left:-100,top:-100,background:'#ff0'}}>
+        <div style={{position:'absolute',zIndex:'100',left:0,top:0,background:'#ff0'}}>
           <div onClick={doOpenBook}>open{wait}</div>
           <div onClick={doNextPage}>next</div>
         </div>

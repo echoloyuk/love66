@@ -1,8 +1,9 @@
 import React from 'react';
 
 export default {
-  name: '我们的爱情故事',
-  subName: '2014/04/10 - now',
+  name: 'Our Stroy',
+  subName: 'Since 2011/07/29',
+  others: '这本书送给我亲爱的6宝宝',
   timmerOn: false, // 用于设置自动timmer
   timeSeed: 0, // 用于计时器种子
   wait: 10, // 用于翻页的时间

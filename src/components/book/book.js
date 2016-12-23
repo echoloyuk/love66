@@ -11,7 +11,7 @@ class Book extends Component {
 
   render() {
     let childs = this.props.children;
-    let {page, open, name, subName} = this.props;
+    let {page, open, name, subName, others} = this.props;
     if (!Array.isArray(childs)) {
       childs = [childs];
     }
@@ -30,13 +30,11 @@ class Book extends Component {
     return (
       <div className={cls}>
         <div className="surface">
-          {name}<br/>
-          {subName}
+          <div className="title-icon"><i/></div>
+          <div className="title">{name}</div>
+          <div className="sub-title">{subName}</div>
+          <div className="others">{others}</div>
         </div>
-        <div className="left-surface"></div>
-        <div className="right-surface"></div>
-        <div className="spine"></div>
-        <div></div>
         {
           childs.map((item, index) => {
             let cls;
@@ -57,6 +55,7 @@ class Book extends Component {
             );
           })
         }
+        <div className="backend"></div>
       </div>
     );
   }
