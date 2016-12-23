@@ -17,6 +17,9 @@ export default (state = DEFAULT_STATE, action) => {
   const length = pageContext.length;
 
   switch (action.type) {
+    case 'ROTATESTAGE':
+      state.rotateStage = true; 
+      break;
     case 'OPENBOOK':
       state.bookOpen = true;
       break;

@@ -9,6 +9,7 @@ export default {
   wait: 10, // 用于翻页的时间
   bookOpen: false, 
   page: 0,
+  rotateStage: false,
   pageContext: [
     {
       code: {
