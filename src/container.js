@@ -45,6 +45,9 @@ class Contanier extends Component {
           timmerOn={timmerOn}
           timeSeed={timeSeed}
           rotateStage={rotateStage}
+          doOpenBook={doOpenBook}
+          doNextPage={doNextPage}
+          playStage={playStage}
           />
         <div style={{position:'absolute',zIndex:'100',left:0,top:0,background:'#ff0'}}>
           <div onClick={playStage}>play{wait}</div>
