@@ -4,13 +4,14 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 import Stage from './src/stage';
+import Container from './src/container.js';
 import reducer from './src/reducers/reducers.js';
 
 const store = createStore(reducer);
 
 ReactDom.render(
   <Provider store={store}>
-	  <Stage />
+    <Container />
   </Provider>,
-	document.getElementById('stage')
+  document.getElementById('app')
 )
