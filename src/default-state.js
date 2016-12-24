@@ -3,7 +3,7 @@ import Heart from './components/heart/heart.js';
 
 export default {
   name: 'Our Stroy',
-  subName: 'Since 2011/07/29',
+  subName: 'Since 2011-07-29',
   others: '这本书送给我亲爱的6宝宝',
   timmerOn: false, // 用于设置自动timmer
   timeSeed: 0, // 用于计时器种子
@@ -11,6 +11,8 @@ export default {
   bookOpen: false, 
   page: 0,
   rotateStage: false,
+  bgMusic: './assets/audio/always_with_me.mp3',
+  bgPlay: false,
   pageContext: [
     {
       code: {

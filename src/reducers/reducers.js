@@ -27,6 +27,9 @@ export default (state = DEFAULT_STATE, action) => {
       if (state.bookOpen && page < length - 1) {
         state.page++;
       }
+      if (state.page == length - 1) {
+        console.timeEnd();
+      }
       break;
     case 'CODESTART':
       if (pageContext[page].code) {
@@ -54,6 +57,9 @@ export default (state = DEFAULT_STATE, action) => {
       } else {
         state.timmerOn = false;
       }
+      break;
+    case 'PLAYMUSIC':
+      state.bgPlay = true;
       break;
     default:
       break;

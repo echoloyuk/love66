@@ -60,7 +60,7 @@ class Typewriter extends Component {
     } else {
       this.props.onFinished && this.props.onFinished();
     }
-    console.log('frame rendered');
+    // console.log('frame rendered');
   }
 
   componentWillReceiveProps(next) {
@@ -76,11 +76,11 @@ class Typewriter extends Component {
 
   render() {
     const {panel, active} = this.state;
-    const {start} = this.props;
+    const {start, speed} = this.props;
 
     if (start) {
       clearTimeout(this.timmer);
-      this.timmer = setTimeout(this.doAni.bind(this), 72);
+      this.timmer = setTimeout(this.doAni.bind(this), speed || 72);
     }
 
     const comReg = /^([\s]{0,}\/\/)/;

@@ -2,12 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import {connect} from 'react-redux';
 import css from './container.less';
-import Book from './components/book/book.js';
-import Typewriter from './components/typewriter/typewriter.js';
-import Photos from './components/photos/photos.js';
-import Timmer from './components/timmer/timmer.js';
-import classNames from 'classnames';
 import Stage from './components/stage/stage.js';
+import Audio from './components/audio/audio.js';
 
 import dispatch from './action/action.js';
 
@@ -27,6 +23,8 @@ class Contanier extends Component {
       timmerOn,
       timeSeed,
       rotateStage,
+      bgMusic,
+      bgPlay,
 
       doOpenBook,
       doNextPage,
@@ -35,6 +33,7 @@ class Contanier extends Component {
 
     return (
       <div className="container">
+        <Audio url={bgMusic} play={bgPlay} />
         <Stage name={name}
           subName={subName}
           others={others}

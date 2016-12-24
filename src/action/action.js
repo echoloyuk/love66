@@ -6,14 +6,16 @@ const action = {
   imgStart: () => ({type: 'IMGSTART'}),
   imgStop: () => ({type: 'IMGSTOP'}),
   setTimmer: () => ({type: 'SETTIMMER'}),
-
+  playMusic: () => ({type: 'PLAYMUSIC'}),
   rotateStage: () => ({type: 'ROTATESTAGE'})
 }
 
 export default (dispatch, o) => {
   return {
     playStage: (...args) => {
+      console.time();
       dispatch(action.rotateStage(...args));
+      dispatch(action.playMusic(...args));
       setTimeout(() => {
         dispatch(action.openBook(...args));
         setTimeout(() => {
