@@ -2,12 +2,12 @@ import DEFAULT_STATE from '../default-state.js';
 
 const resetCodeStat = (arr) => {
   arr.map((item, index) => {
-    item.code.start = false;
+    item.code && (item.code.start = false);
   });
 }
 const resetImgStat = (arr) => {
   arr.map((item, index) => {
-    item.imgs.start = false;
+    item.imgs && (item.imgs.start = false);
   });
 }
 
@@ -29,14 +29,18 @@ export default (state = DEFAULT_STATE, action) => {
       }
       break;
     case 'CODESTART':
-      resetCodeStat(pageContext);
-      pageContext[page].code.start = true;
-      state.pageContext = pageContext;
+      if (pageContext[page].code) {
+        resetCodeStat(pageContext);
+        pageContext[page].code.start = true;
+        state.pageContext = pageContext;
+      }
       break;
     case 'IMGSTART':
-      resetImgStat(pageContext);
-      pageContext[page].imgs.start = true;
-      state.pageContext = pageContext;
+      if (pageContext[page].imgs) {
+        resetImgStat(pageContext);
+        pageContext[page].imgs.start = true;
+        state.pageContext = pageContext;
+      }
       break;
     case 'IMGSTOP':
       resetImgStat(pageContext);

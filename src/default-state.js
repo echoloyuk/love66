@@ -1,4 +1,5 @@
 import React from 'react';
+import Heart from './components/heart/heart.js';
 
 export default {
   name: 'Our Stroy',
@@ -303,15 +304,12 @@ Stroy.toBeContinued();`
     }, {
       code: {
         start: false,
-        context: `i.love(you);`
+        context: 
+`// 66:
+i.love(you);
+'Marry Me!'`
       }, 
-      imgs: {
-        start: false,
-        urls: [
-          './assets/images/5.jpg', 
-          './assets/images/2.jpg'
-        ]
-      },
+      right: <Heart />,
       wait: 10
     },
   ]

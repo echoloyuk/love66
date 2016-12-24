@@ -2,13 +2,11 @@ import React from 'react';
 import classnames from 'classnames';
 import {connect} from 'react-redux';
 import css from './stage.less'
-import Book from './components/book/book.js';
-import Typewriter from './components/typewriter/typewriter.js';
-import Photos from './components/photos/photos.js';
-import Timmer from './components/timmer/timmer.js';
+import Book from '../book/book.js';
+import Typewriter from '../typewriter/typewriter.js';
+import Photos from '../photos/photos.js';
+import Timmer from '../timmer/timmer.js';
 import classNames from 'classnames';
-
-import dispatch from './action/action.js';
 
 const {Component} = React;
 const cx = classnames.bind(css);
@@ -44,14 +42,10 @@ class Stage extends Component {
           <Book name={name} subName={subName} open={bookOpen} page={page} others={others}>
           {
             pageContext.map((item, i) => {
-              if (item.custom) {
-
-              } else {
-                return {
-                  left: <Typewriter start={item.code.start}>{item.code.context}</Typewriter>,
-                  right: <Photos start={item.imgs.start} urls={item.imgs.urls} />
-                }
-              }
+              let left, right;
+              left = (item.code ? <Typewriter start={item.code.start}>{item.code.context}</Typewriter> : item.left);
+              right = (item.imgs ? <Photos start={item.imgs.start} urls={item.imgs.urls} /> : item.right);
+              return {left, right};
             })
           }
           </Book>

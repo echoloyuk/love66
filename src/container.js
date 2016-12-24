@@ -7,7 +7,7 @@ import Typewriter from './components/typewriter/typewriter.js';
 import Photos from './components/photos/photos.js';
 import Timmer from './components/timmer/timmer.js';
 import classNames from 'classnames';
-import Stage from './stage.js';
+import Stage from './components/stage/stage.js';
 
 import dispatch from './action/action.js';
 
