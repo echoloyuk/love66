@@ -15,7 +15,7 @@ export default {
   bgPlay: false,
   pageContext: [
     {
-      code: {
+      code: { // 20s
         start: false,
         context: 
 `// date: 2011-07-29
@@ -50,7 +50,7 @@ while (i++ < 10000000000000) {
           './assets/src/1/5.jpg',
         ]
       },
-      wait: 33
+      wait: 26
     }, {
       code: {
         start: false,
@@ -80,11 +80,11 @@ i.action.push(function () {
         start: false,
         urls: [
           './assets/src/2/2.jpg',
-          './assets/src/2/3.jpg',
           './assets/src/2/1.jpg'
-        ]
+        ],
+        interval: 5000
       },
-      wait: 30
+      wait: 24
     }, {
       code: {
         start: false,
@@ -121,7 +121,7 @@ we.try(function {
           './assets/src/3/5.jpg',
         ]
       },
-      wait: 36
+      wait: 30
     }, {
       code: {
         start: false,
@@ -147,7 +147,7 @@ i.happiness += 10000000;`
           './assets/src/4/1.jpg',
         ]
       },
-      wait: 30
+      wait: 20
     }, {
       code: {
         start: false,
@@ -177,9 +177,9 @@ we.at('2016-05-02').go('天津', function (go) {
           './assets/src/5/8.jpg',
           './assets/src/5/9.jpg',
         ],
-        interval: 3000
+        interval: 2400
       },
-      wait: 32
+      wait: 28
     }, {
       code: {
         start: false,
@@ -209,9 +209,10 @@ we.at('2015-07-04').go('南戴河', function (go) {
           './assets/src/6/7.jpg',
           './assets/src/6/8.jpg',
           './assets/src/6/9.jpg',
-        ]
+        ],
+        interval: 2500
       },
-      wait: 40
+      wait: 28
     }, {
       code: {
         start: false,
@@ -242,9 +243,9 @@ you.do('出差').go('成都', function () {
           './assets/src/7/8.jpg',
           './assets/src/7/9.jpg',
         ],
-        interval: 3000
+        interval: 2400
       },
-      wait: 36
+      wait: 30
     }, {
       code: {
         start: false,
@@ -282,9 +283,9 @@ we.at('2016-06-02').go('日本', function (go) {
           './assets/src/8/33.jpg',
           './assets/src/8/44.jpg',
         ],
-        interval: 3000
+        interval: 2200
       },
-      wait: 40
+      wait: 33
     }, {
       code: {
         start: false,
@@ -322,9 +323,9 @@ try {
           './assets/src/9/8.jpg',
           './assets/src/9/9.jpg',
         ],
-        interval: 3000
+        interval: 2400
       },
-      wait: 40
+      wait: 34
     }, {
       code: {
         start: false,
@@ -365,9 +366,9 @@ Stroy.toBeContinued();`
           './assets/src/10/19.jpg',
           './assets/src/10/20.jpg',
         ],
-        interval: 2800
+        interval: 2400
       },
-      wait: 58
+      wait: 46
     }, {
       code: {
         start: false,

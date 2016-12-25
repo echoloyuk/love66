@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import css from './photos.less';
 
-const IMG_INTERVAL = 4000;
+const IMG_INTERVAL = 3000;
 const DIRECTION = ['top', 'right', 'bottom', 'left'];
 
 class Photos extends Component {
