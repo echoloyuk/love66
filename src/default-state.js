@@ -43,11 +43,14 @@ while (i++ < 10000000000000) {
       imgs: {
         start: false,
         urls: [
-          './assets/mov/1.mp4',
-          './assets/images/4.jpg'
+          './assets/src/1/6.jpg',
+          './assets/src/1/1.jpg',
+          './assets/src/1/4.jpg',
+          './assets/src/1/2.jpg',
+          './assets/src/1/5.jpg',
         ]
       },
-      wait: 35
+      wait: 33
     }, {
       code: {
         start: false,
@@ -76,8 +79,9 @@ i.action.push(function () {
       imgs: {
         start: false,
         urls: [
-          './assets/images/3.jpg', 
-          './assets/images/4.jpg'
+          './assets/src/2/2.jpg',
+          './assets/src/2/3.jpg',
+          './assets/src/2/1.jpg'
         ]
       },
       wait: 30
@@ -110,8 +114,11 @@ we.try(function {
       imgs: {
         start: false,
         urls: [
-          './assets/images/5.jpg', 
-          './assets/images/2.jpg'
+          './assets/src/3/1.jpg',
+          './assets/src/3/2.jpg',
+          './assets/src/3/3.jpg',
+          './assets/src/3/4.jpg',
+          './assets/src/3/5.jpg',
         ]
       },
       wait: 36
@@ -137,8 +144,7 @@ i.happiness += 10000000;`
       imgs: {
         start: false,
         urls: [
-          './assets/images/5.jpg', 
-          './assets/images/2.jpg'
+          './assets/src/4/1.jpg',
         ]
       },
       wait: 30
@@ -161,11 +167,19 @@ we.at('2016-05-02').go('天津', function (go) {
       imgs: {
         start: false,
         urls: [
-          './assets/images/5.jpg', 
-          './assets/images/2.jpg'
-        ]
+          './assets/src/5/1.jpg',
+          './assets/src/5/2.jpg',
+          './assets/src/5/3.jpg',
+          './assets/src/5/4.jpg',
+          './assets/src/5/5.jpg',
+          './assets/src/5/6.jpg',
+          './assets/src/5/7.jpg',
+          './assets/src/5/8.jpg',
+          './assets/src/5/9.jpg',
+        ],
+        interval: 3000
       },
-      wait: 30
+      wait: 32
     }, {
       code: {
         start: false,
@@ -187,8 +201,14 @@ we.at('2015-07-04').go('南戴河', function (go) {
       imgs: {
         start: false,
         urls: [
-          './assets/images/5.jpg', 
-          './assets/images/2.jpg'
+          './assets/src/6/2.jpg',
+          './assets/src/6/3.jpg',
+          './assets/src/6/4.jpg',
+          './assets/src/6/5.jpg',
+          './assets/src/6/6.jpg',
+          './assets/src/6/7.jpg',
+          './assets/src/6/8.jpg',
+          './assets/src/6/9.jpg',
         ]
       },
       wait: 40
@@ -212,11 +232,19 @@ you.do('出差').go('成都', function () {
       imgs: {
         start: false,
         urls: [
-          './assets/images/5.jpg', 
-          './assets/images/2.jpg'
-        ]
+          './assets/src/7/1.jpg',
+          './assets/src/7/2.jpg',
+          './assets/src/7/3.jpg',
+          './assets/src/7/4.jpg',
+          './assets/src/7/5.jpg',
+          './assets/src/7/6.jpg',
+          './assets/src/7/7.jpg',
+          './assets/src/7/8.jpg',
+          './assets/src/7/9.jpg',
+        ],
+        interval: 3000
       },
-      wait: 30
+      wait: 36
     }, {
       code: {
         start: false,
@@ -240,9 +268,21 @@ we.at('2016-06-02').go('日本', function (go) {
       imgs: {
         start: false,
         urls: [
-          './assets/images/5.jpg', 
-          './assets/images/2.jpg'
-        ]
+          './assets/src/8/1.jpg',
+          './assets/src/8/2.jpg',
+          './assets/src/8/3.jpg',
+          './assets/src/8/4.jpg',
+          './assets/src/8/5.jpg',
+          './assets/src/8/7.jpg',
+          './assets/src/8/8.jpg',
+          './assets/src/8/1.mp4',
+          './assets/src/8/9.jpg',
+          './assets/src/8/11.jpg',
+          './assets/src/8/22.jpg',
+          './assets/src/8/33.jpg',
+          './assets/src/8/44.jpg',
+        ],
+        interval: 3000
       },
       wait: 40
     }, {
@@ -272,9 +312,17 @@ try {
       imgs: {
         start: false,
         urls: [
-          './assets/images/5.jpg', 
-          './assets/images/2.jpg'
-        ]
+          './assets/src/9/1.jpg',
+          './assets/src/9/1.mp4',
+          './assets/src/9/2.jpg',
+          './assets/src/9/2.mp4',
+          './assets/src/9/5.jpg',
+          './assets/src/9/6.jpg',
+          './assets/src/9/7.jpg',
+          './assets/src/9/8.jpg',
+          './assets/src/9/9.jpg',
+        ],
+        interval: 3000
       },
       wait: 40
     }, {
@@ -298,14 +346,32 @@ Stroy.toBeContinued();`
       imgs: {
         start: false,
         urls: [
-          './assets/images/5.jpg', 
-          './assets/images/2.jpg'
-        ]
+          './assets/src/10/0.jpg',
+          './assets/src/10/1.jpg',
+          './assets/src/10/2.jpg',
+          './assets/src/10/3.jpg',
+          './assets/src/10/4.jpg',
+          './assets/src/10/7.jpg',
+          './assets/src/10/8.jpg',
+          './assets/src/10/9.jpg',
+          './assets/src/10/11.jpg',
+          './assets/src/10/12.jpg',
+          './assets/src/10/13.jpg',
+          './assets/src/10/14.jpg',
+          './assets/src/10/15.jpg',
+          './assets/src/10/16.jpg',
+          './assets/src/10/17.jpg',
+          './assets/src/10/18.jpg',
+          './assets/src/10/19.jpg',
+          './assets/src/10/20.jpg',
+        ],
+        interval: 2800
       },
-      wait: 40
+      wait: 58
     }, {
       code: {
         start: false,
+        speed: 500,
         context: 
 `// 66:
 i.love(you);
