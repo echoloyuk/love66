@@ -27,7 +27,7 @@ class Audio extends Component {
     const {url} = this.props;
     return (
       <section className="bg-audio">
-        <audio src={url} loop preload ref="audioDOM" />
+        <audio src={url} preload ref="audioDOM" />
       </section>
     )
   }
