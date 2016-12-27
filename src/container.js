@@ -5,7 +5,6 @@ import css from './container.less';
 import Stage from './components/stage/stage.js';
 import Audio from './components/audio/audio.js';
 import Cover from './components/cover/cover.js';
-import Bgm from './components/bgm/bgm.js';
 
 import dispatch from './action/action.js';
 
@@ -47,13 +46,8 @@ class Contanier extends Component {
       init: !!init
     });
 
-    const bgs = [
-      './assets/bgm/1.mp3',
-      './assets/bgm/2.mp3'
-    ];
     return (
       <div className={cls}>
-        <Bgm urls={bgs} play={init} />
         <Cover show={init}>
           <div className="start-btn" onClick={playStage}></div>
         </Cover>
