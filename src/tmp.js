@@ -126,7 +126,6 @@ try {
 }
 
 // ------
-// 故事还在继续，也会一直继续。
 // 回忆我们的故事，我们一起度过了很多...
 Stroy.about(we);
 // 我们在一起，过着平凡而又不平淡的日子
@@ -139,6 +138,15 @@ Stroy.about(we);
 // 我们去过彼此留下回忆的地方
 // 未来的故事还有很多
 Stroy.toBeContinued();
+// 我愿意
+i.will(function () {
+  // 关心你，照顾你
+  CareAbout(you);
+  // 陪你去你任何想去的地方
+  GoWith(you) && PlayWith(you);
+  // 做一个你可以依靠的人
+  Support(you);
+});
 
 
 // ------

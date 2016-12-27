@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import css from './container.less';
 import Stage from './components/stage/stage.js';
 import Audio from './components/audio/audio.js';
+import Cover from './components/cover/cover.js';
+import Bgm from './components/bgm/bgm.js';
 
 import dispatch from './action/action.js';
 
@@ -25,14 +27,36 @@ class Contanier extends Component {
       rotateStage,
       bgMusic,
       bgPlay,
+      init,
 
       doOpenBook,
       doNextPage,
       playStage
     } = this.props;
+    const debugCls = {
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      fontSize: 10,
+      zIndex: 1000,
+      backgroundColor: '#666',
+      color: '#ccc'
+    }
 
+    let cls = classnames('container', {
+      init: !!init
+    });
+
+    const bgs = [
+      './assets/bgm/1.mp3',
+      './assets/bgm/2.mp3'
+    ];
     return (
-      <div className="container">
+      <div className={cls}>
+        <Bgm urls={bgs} play={init} />
+        <Cover show={init}>
+          <div className="start-btn" onClick={playStage}></div>
+        </Cover>
         <Audio url={bgMusic} play={bgPlay} />
         <Stage name={name}
           subName={subName}
@@ -48,9 +72,9 @@ class Contanier extends Component {
           doNextPage={doNextPage}
           playStage={playStage}
           />
-        <div style={{position:'absolute',zIndex:'100',left:0,top:0,background:'#ff0'}}>
-          <div onClick={playStage}>play{wait}</div>
-          <div onClick={doNextPage}>next</div>
+        <div style={debugCls}>
+          <div onClick={doNextPage}>[next]</div>
+          <div>wait: {wait}</div>
         </div>
       </div>
     )

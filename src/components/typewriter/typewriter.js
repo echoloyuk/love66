@@ -76,7 +76,7 @@ class Typewriter extends Component {
 
   render() {
     const {panel, active} = this.state;
-    const {start, speed} = this.props;
+    const {start, speed, big} = this.props;
 
     if (start) {
       clearTimeout(this.timmer);
@@ -89,10 +89,14 @@ class Typewriter extends Component {
       'comment': comReg.test(active)
     });
 
+    let cls = classNames('typewriter-panel', {
+      big: !!big
+    });
+
     return (
-      <div className="typewriter-panel">
+      <div className={cls}>
         {panel.map((item, index) => {
-          const cls = classNames({
+          let cls = classNames({
             't-code-panel': true,
             'comment': comReg.test(item)
           });

@@ -13,12 +13,14 @@ export default {
   rotateStage: false,
   bgMusic: './assets/audio/always_with_me.mp3',
   bgPlay: false,
+  init: true,
   pageContext: [
     {
       code: { // 20s
         start: false,
         context: 
-`// date: 2011-07-29
+`// 这是一个关于马先生和六宝宝的故事。
+// date: 2011-07-29
 var i = new Boy('马驰');
 // 那一年我加入了航信，分到了飞8
 i.join('航信素质拓展', '飞8');
@@ -90,7 +92,8 @@ i.happiness += 10000000;`
       code: {
         start: false,
         context: 
-`we.at('2016-05-02').go('天津', function (go) {
+`// 我们第一次携手出行
+we.at('2016-05-02').go('天津', function (go) {
   // 第一次带你认识我的学校
   go.push('民航大学');
   // 去起士林餐厅
@@ -149,7 +152,7 @@ we.at('2015-07-04').go('南戴河', function (go) {
           './assets/src/6/8.jpg',
           './assets/src/6/9.jpg',
         ],
-        interval: 2500
+        interval: 2700
       },
       wait: 28
     }, {
@@ -182,7 +185,7 @@ you.do('出差').go('成都', function () {
           './assets/src/7/7.jpg',
           './assets/src/7/9.jpg',
         ],
-        interval: 2400
+        interval: 2500
       },
       wait: 27
     }, {
@@ -219,7 +222,7 @@ we.at('2016-06-02').go('日本', function (go) {
           './assets/src/8/33.jpg',
           './assets/src/8/44.jpg',
         ],
-        interval: 2200
+        interval: 2300
       },
       wait: 27
     }, {
@@ -265,8 +268,7 @@ try {
       code: {
         start: false,
         context: 
-`// 故事还在继续，也会一直继续。
-// 回忆我们的故事，我们一起度过了很多...
+`// 回忆我们的故事，我们一起度过了很多...
 Stroy.about(we);
 // 我们在一起，过着平凡而又不平淡的日子
 // 我们有过一些争吵，但我们发现离不开彼此
@@ -277,7 +279,16 @@ Stroy.about(we);
 // 我们一样爱吃、爱玩
 // 我们去过彼此留下回忆的地方
 // 未来的故事还有很多
-Stroy.toBeContinued();`
+Stroy.toBeContinued();
+// 我愿意
+i.will(function () {
+  // 关心你，照顾你
+  CareAbout(you);
+  // 陪你去你任何想去的地方
+  GoWith(you) && PlayWith(you);
+  // 做一个你可以依靠的人
+  Support(you);
+});`
       }, 
       imgs: {
         start: false,
@@ -306,6 +317,7 @@ Stroy.toBeContinued();`
       code: {
         start: false,
         speed: 300,
+        big: true,
         context: 
 `// 66:
 i.love(you);

@@ -43,7 +43,7 @@ class Stage extends Component {
           {
             pageContext.map((item, i) => {
               let left, right;
-              left = (item.code ? <Typewriter start={item.code.start} speed={item.code.speed}>{item.code.context}</Typewriter> : item.left);
+              left = (item.code ? <Typewriter start={item.code.start} speed={item.code.speed} big={item.code.big}>{item.code.context}</Typewriter> : item.left);
               right = (item.imgs ? <Photos start={item.imgs.start} urls={item.imgs.urls} interval={item.imgs.interval} /> : item.right);
               return {left, right};
             })
