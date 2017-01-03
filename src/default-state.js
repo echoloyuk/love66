@@ -216,7 +216,7 @@ we.at('2016-06-02').go('日本', function (go) {
           './assets/src/8/5.jpg',
           './assets/src/8/7.jpg',
           './assets/src/8/8.jpg',
-          './assets/src/8/1.mp4',
+          './assets/src/8/11.jpg',
           './assets/src/8/9.jpg',
           './assets/src/8/22.jpg',
           './assets/src/8/33.jpg',
@@ -252,9 +252,9 @@ try {
       imgs: {
         start: false,
         urls: [
-          './assets/src/9/1.mp4',
+          './assets/src/9/22.jpg',
           './assets/src/9/2.jpg',
-          './assets/src/9/2.mp4',
+          './assets/src/9/33.jpg',
           './assets/src/9/5.jpg',
           './assets/src/9/6.jpg',
           './assets/src/9/7.jpg',

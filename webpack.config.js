@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require("webpack");
 
 module.exports = {
     entry: './index.js',
@@ -40,5 +41,12 @@ module.exports = {
         colors: true,//终端中输出结果为彩色
         historyApiFallback: true,//不跳转
         inline: true//实时刷新
-    }
+    },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    ]
 }

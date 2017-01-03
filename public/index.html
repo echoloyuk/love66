@@ -3,12 +3,54 @@
 <head>
 <title>toMyLove66</title>
 <style>
-#app{width:100%;height:100%}
+#app{width: 100%; height: 100%}
+#lazy{position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: #fff; z-index: 9999;}
+#loading {left: 20px; position: relative;}
+#loading-panel {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -50px 0 0 -50px;
+  text-align: center;
+  font-size: 12px;
+}
+#per-panel {height: 16px; position: relative; overflow: hidden; width: 100%; border: 1px solid #e7acea; margin-top: 10px;}
+#per-panel .c{position: absolute; width: 100%; height: 16px; line-height: 16px; z-index: 2;}
+#per-panel .b{position: absolute; z-index: 1; left: 0; top: 0; height: 16px; background-color: #e7acea; width: 0; transition: all .3s;}
+#chr{position: absolute; z-index: 1000000; left: 0; right: 0; bottom: 0; top: 0; background-color: #eee; font-size: 16px;
+text-align: center; padding: 60px 30px; line-height: 2em;}
+
+@media screen and (min-width: 500px) {
+  #chr {display: none;}
+}
 </style>
+<link rel="stylesheet" href="./assets/loading.css">
 </head>
 <body>
+  <div id="chr">
+    注意，建议您使用最新的Chrome浏览器查看。<br>
+    同时，您必须使用宽度超过960px的PC浏览器达到更好的效果。<br>
+    同时，它不是为移动端写的。十分抱歉。
+  </div>
 	<div id="app"></div>
-	
-	<script type="text/javascript" src="./bundle.js"></script>
+	<div id="lazy">
+    <div id="loading-panel">
+      <div id="loading" class="loading-panel">
+        <div class="point"><div class="inner"></div></div>
+        <div class="point"><div class="inner"></div></div>
+        <div class="point"><div class="inner"></div></div>
+        <div class="point"><div class="inner"></div></div>
+        <div class="point"><div class="inner"></div></div>
+        <div class="point"><div class="inner"></div></div>
+      </div>
+      <div id="per-panel">
+        <div class="c">Loading...</div>
+        <div class="b" id="per"></div>
+      </div>
+    </div>
+  </div>
+	<script type="text/javascript" src="./bundle.js" async="async"></script>
 </body>
 </html>
