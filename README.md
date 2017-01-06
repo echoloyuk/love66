@@ -39,6 +39,8 @@ about tech points:
 该项目处在改进阶段，目前只有dev模式，为了临时发布只在`webpack.config.js`加载了compress的插件，
 如果您要调试代码，请去掉最后的`plugins`配置
 
+您可以使用`npm run build`命令将代码压缩成发布版本
+
 ## 关于源码
 
 项目的源码在`根目录/src`下，使用react-redux架构开发，但是未使用任何redux中间件。我会持续在未来优化和重构。
