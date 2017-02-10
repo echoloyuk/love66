@@ -10,7 +10,7 @@
 ![img](others/res.jpg)
 
 
-[线上预览地址](http://www.himachi.cn:808/ilove66/)。请您使用Chrome浏览器打开。
+[线上预览地址](http://www.himachi.cn:5266/ilove66/)。请您使用Chrome浏览器打开。
 
 注意，该项目没有做网络性能优化，所以您可能会在loading页面长期停留。
 如遇进度条快要走完但是长期未动，请您**重新刷新**页面。（不要开启开发者模式，或保证开发者模式允许缓存）
